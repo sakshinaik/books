@@ -2,15 +2,8 @@
 FROM php:7.1-apache
 WORKDIR /var/www
 
-# Add application code
-COPY ./ /var/www/
-
-# Set Permissions
-RUN chgrp -R www-data /var/www/storage /var/www/bootstrap/cache
-RUN chmod -R 0775 /var/www/storage /var/www/bootstrap/cache
-
-# Cleanup
-RUN rm -rf /var/www/{docker,Dockerfile,html}
+# Install required php extensions
+RUN docker-php-ext-install -j$(nproc) mbstring pdo pdo_mysql
 
 # Setup apache configuration
 COPY docker/apache2.conf /etc/apache2/apache2.conf
@@ -26,5 +19,15 @@ RUN ln -s /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/hea
 
 EXPOSE 80
 EXPOSE 443
+
+# Add application code
+COPY ./ /var/www/
+
+# Set Permissions
+RUN chgrp -R www-data /var/www/storage /var/www/bootstrap/cache
+RUN chmod -R 0775 /var/www/storage /var/www/bootstrap/cache
+
+# Cleanup
+RUN rm -rf /var/www/{docker,Dockerfile,html}
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
