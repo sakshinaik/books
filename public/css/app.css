@@ -3,8 +3,19 @@ body {
 	color: #35312c;
 }
 
-a {
+a, .current-link {
 	color: #154bbf;
+
+	/* Fat Finger Settings */
+	height: 48px;
+	min-width: 48px;
+
+	display: inline-block;
+	line-height: 48px;
+}
+
+.current-link {
+	color: inherit;
 }
 
 .center-text {
