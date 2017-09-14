@@ -12,10 +12,14 @@
 
         <!-- Styles -->
         <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="/css/app.css" rel="stylesheet" type="text/css">
+
+        <!-- Page Specific Styles -->
+        @stack('styles')
     </head>
     <body>
         <header>
-            <h1>Digital Bookshelf</h1>
+            <h1 id="title" class="center-text">Digital Bookshelf</h1>
         </header>
         <section id="main">
             @yield('content')
