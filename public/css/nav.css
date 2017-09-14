@@ -1,0 +1,17 @@
+nav {
+	margin-top: -25px;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+}
+
+nav ul > li {
+	display: inline-block;
+}
+
+#logout-form {
+	display: none;
+}

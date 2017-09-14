@@ -14,13 +14,24 @@
         <link href="/css/normalize.css" rel="stylesheet" type="text/css">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 
-        <!-- Page Specific Styles -->
+        <!-- Additional Styles -->
+        @auth
+            @push('styles')
+                <link href="/css/nav.css" rel="stylesheet" type="text/css">
+            @endpush
+        @endauth
+
         @stack('styles')
     </head>
     <body>
         <header>
             <h1 id="title" class="center-text">Digital Bookshelf</h1>
         </header>
+
+        @auth
+            @include('elements.nav')
+        @endauth
+        
         <section id="main">
             @yield('content')
         </section>
