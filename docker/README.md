@@ -1,4 +1,4 @@
-# Docker for Marrick Intranet
+# Docker Usage Instructions
 
 ## Before Building
 Before building the container, it's important to make sure that all your package managers have been executed, composer, npm, bower, etc.  It's also important to setup the .env file by moving the /books/.env.example file to /books/.env and ensuring all relevent variables are set.  Don't forget to set your application key.  You can use the following command to do this automatically...
