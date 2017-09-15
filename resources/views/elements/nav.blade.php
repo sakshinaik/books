@@ -27,6 +27,14 @@
                 </li>
 
                 <li>
+                    @if(Route::currentRouteName() == 'register')
+                        <span class="current-link">Register</span>
+                    @else
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                </li>
+
+                <li>
                     @if(Route::currentRouteName() == 'login')
                         <span class="current-link">Login</span>
                     @else
