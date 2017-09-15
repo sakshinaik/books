@@ -14,6 +14,15 @@ a, .current-link {
 	line-height: 48px;
 }
 
+a.no-style {
+	color: inherit;
+	height: inherit;
+	min-width: inherit;
+	display: inherit;
+	line-height: inherit;
+	text-decoration: inherit;
+}
+
 .current-link {
 	color: inherit;
 }

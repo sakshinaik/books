@@ -15,22 +15,20 @@
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 
         <!-- Additional Styles -->
-        @auth
-            @push('styles')
-                <link href="/css/nav.css" rel="stylesheet" type="text/css">
-            @endpush
-        @endauth
+        @if(Route::currentRouteName() != 'welcome')
+            <link href="/css/nav.css" rel="stylesheet" type="text/css">
+        @endif
 
         @stack('styles')
     </head>
     <body>
         <header>
-            <h1 id="title" class="center-text">Digital Bookshelf</h1>
+            <a href="{{ Auth::check() ? route('home') : route('welcome') }}" class="no-style">
+                <h1 id="title" class="center-text">Digital Bookshelf</h1>
+            </a>
         </header>
 
-        @auth
-            @include('elements.nav')
-        @endauth
+        @include('elements.nav')
         
         <section id="main">
             @yield('content')
