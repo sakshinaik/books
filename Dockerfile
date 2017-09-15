@@ -18,7 +18,6 @@ RUN ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rew
 RUN ln -s /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled/headers.load
 
 EXPOSE 80
-EXPOSE 443
 
 # Add application code
 COPY ./ /var/www/
