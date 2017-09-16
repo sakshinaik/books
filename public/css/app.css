@@ -6,13 +6,6 @@ body {
 
 a, .current-link {
     color: #154bbf;
-
-    /* Fat Finger Settings */
-    height: 48px;
-    min-width: 48px;
-
-    display: inline-block;
-    line-height: 48px;
 }
 
 a.no-style {
@@ -68,6 +61,8 @@ a.no-style {
 
         display: inline-block;
         line-height: 48px;
+
+        text-align: center;
     }
 }
 
