@@ -1,3 +1,4 @@
+/* General Styles */
 body {
 	background-color: #d5d5d5;
 	color: #35312c;
@@ -20,4 +21,60 @@ a, .current-link {
 
 .center-text {
 	text-align: center;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.error {
+	color: #FF0000;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.success {
+	color #1f760a;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.center-horizontal {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+input::selection {
+	background-color: #FCB8C3;
+	color: inherit;
+}
+
+
+/* Fat Finger Settings */
+@media screen and (max-width: 1024px) {
+	button {
+		height: 48px;
+	}
+
+	a, .current-link {
+		height: 48px;
+		min-width: 48px;
+
+		display: inline-block;
+		line-height: 48px;
+	}
+}
+
+/* Flexbox Styles */
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flex-item {
+	flex: 1 0 auto;
 }
