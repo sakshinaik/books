@@ -12,6 +12,5 @@
     <section id="next-steps" class="center-text">
         <a href="{{ route('login') }}">Login</a>
         <a href="{{ route('register') }}">Register</a>
-        <a href="/password/reset">Reset Password</a>
     </section>
 @endsection

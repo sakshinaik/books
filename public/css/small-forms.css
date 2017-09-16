@@ -1,0 +1,41 @@
+/* General Form Settings */
+form {
+    max-width: 425px;;
+    min-width: 320px;
+    margin: 0 auto 0 auto;
+}
+
+form div {
+    margin-top: 10px;
+}
+
+fieldset {
+    border: 2px groove #7F6B54;
+}
+
+legend {
+    width: 100%;
+}
+
+.input-label {
+    min-width: 120px;
+    order: 0;
+}
+
+.error {
+	order: 1;
+}
+
+.input-field {
+	order: 2;
+}
+
+@media screen and (min-width: 375px) {
+	.error {
+		order: 0;
+	}
+
+	.input-label {
+		order: 1;
+	}
+}
