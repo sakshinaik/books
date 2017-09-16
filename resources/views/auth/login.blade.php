@@ -11,29 +11,27 @@
     <fieldset class="flex-container">
         <legend class="center-text">Login</legend>
 
-        @if ($errors->has('email'))
-            <div class="error">
-                <span>
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            </div>
-        @endif
-
-        @if ($errors->has('password'))
-            <div class="error">
-                <span>
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            </div>
-        @endif
-
         <div class="flex-container flex-item">
             <label for="email" class="flex-item center-text input-label">E-Mail Address</label>
+            @if ($errors->has('email'))
+                <div class="error flex-item">
+                    <span>
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                </div>
+            @endif
             <input id="email" type="email" class="flex-item input-field" name="email" value="{{ old('email') }}" required autofocus>
         </div>
 
         <div class="flex-container flex-item">
             <label for="password" class="flex-item center-text input-label">Password</label>
+            @if ($errors->has('password'))
+                <div class="error flex-item">
+                    <span>
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                </div>
+            @endif
             <input id="password" type="password" class="flex-item input-field" name="password" required>
 
         </div>

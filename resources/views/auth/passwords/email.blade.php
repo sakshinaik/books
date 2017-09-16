@@ -16,17 +16,18 @@
                     <strong>{{ session('status') }}</strong>
                 </span>
             </div>
-        @elseif ($errors->has('email'))
-            <div class="error">
-                <span>
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            </div>
         @endif
 
         <div class="flex-container flex-item">
-            <label for="email" class="flex-item center-text full-width">E-Mail Address</label>
-            <input id="email" type="email" class="flex-item full-width" name="email" value="{{ old('email') }}" required autofocus>
+            <label for="email" class="flex-item center-text full-width input-label">E-Mail Address</label>
+            @if ($errors->has('email'))
+                <div class="error error-middle flex-item">
+                    <span>
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                </div>
+            @endif
+            <input id="email" type="email" class="flex-item full-width input-field" name="email" value="{{ old('email') }}" required autofocus>
         </div>
 
         <div class="flex-item">

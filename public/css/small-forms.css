@@ -23,11 +23,11 @@ legend {
 }
 
 .error {
-	order: 1;
+	order: 5;
 }
 
 .input-field {
-	order: 2;
+	order: 10;
 }
 
 @media screen and (min-width: 375px) {
@@ -36,6 +36,11 @@ legend {
 	}
 
 	.input-label {
-		order: 1;
+		order: 5;
 	}
+}
+
+/* Force error in middle of label and input */
+.error-middle {
+	order: 7;
 }
