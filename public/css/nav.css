@@ -10,6 +10,7 @@ nav ul {
 
 nav ul > li {
 	display: inline-block;
+	margin:5px 10px;
 }
 
 #logout-form {

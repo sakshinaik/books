@@ -27,6 +27,7 @@ a.no-style {
 
 .full-width {
     width: 100%;
+    max-width: 100%;
 }
 
 .error {
@@ -75,5 +76,5 @@ a.no-style {
 }
 
 .flex-item {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
 }

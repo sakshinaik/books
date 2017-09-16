@@ -18,29 +18,41 @@ legend {
 }
 
 .input-label {
+    width: 100%;
     min-width: 120px;
     order: 0;
 }
 
 .error {
-	order: 5;
+    order: 5;
 }
 
 .input-field {
-	order: 10;
+    width: 100%;
+    order: 10;
 }
 
 @media screen and (min-width: 375px) {
-	.error {
-		order: 0;
-	}
+    .error {
+        order: 0;
+    }
 
-	.input-label {
-		order: 5;
-	}
+    .input-label {
+        order: 5;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .input-label {
+        width: auto;
+    }
+
+    .input-field {
+        max-width: 230px;
+    }
 }
 
 /* Force error in middle of label and input */
 .error-middle {
-	order: 7;
+    order: 7;
 }
