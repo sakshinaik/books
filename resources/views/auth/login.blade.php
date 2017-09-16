@@ -29,12 +29,12 @@
 
         <div class="flex-container flex-item">
             <label for="email" class="flex-item center-text input-label">E-Mail Address</label>
-            <input id="email" type="email" class="flex-item" name="email" value="{{ old('email') }}" required autofocus>
+            <input id="email" type="email" class="flex-item input-field" name="email" value="{{ old('email') }}" required autofocus>
         </div>
 
         <div class="flex-container flex-item">
             <label for="password" class="flex-item center-text input-label">Password</label>
-            <input id="password" type="password" class="flex-item" name="password" required>
+            <input id="password" type="password" class="flex-item input-field" name="password" required>
 
         </div>
 
