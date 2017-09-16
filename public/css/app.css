@@ -1,89 +1,84 @@
 /* General Styles */
 body {
-	background-color: #d5d5d5;
-	color: #35312c;
+    background-color: #d5d5d5;
+    color: #35312c;
 }
 
 a, .current-link {
-	color: #154bbf;
+    color: #154bbf;
 
-	/* Fat Finger Settings */
-	height: 48px;
-	min-width: 48px;
+    /* Fat Finger Settings */
+    height: 48px;
+    min-width: 48px;
 
-	display: inline-block;
-	line-height: 48px;
+    display: inline-block;
+    line-height: 48px;
 }
 
 a.no-style {
-	color: inherit;
-	height: inherit;
-	min-width: inherit;
-	display: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
+    color: inherit;
+    height: inherit;
+    min-width: inherit;
+    display: inherit;
+    line-height: inherit;
+    text-decoration: inherit;
 }
 
 .current-link {
-	color: inherit;
+    color: inherit;
 }
 
 .center-text {
-	text-align: center;
+    text-align: center;
 }
 
 .full-width {
-	width: 100%;
+    width: 100%;
 }
 
 .error {
-	color: #FF0000;
-	text-align: center;
-	width: 100%;
-	margin-bottom: 5px;
+    color: #FF0000;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .success {
-	color #1f760a;
-	text-align: center;
-	margin-bottom: 25px;
+    color #1f760a;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .center-horizontal {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-}
-
-input::selection {
-	background-color: #FCB8C3;
-	color: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 
 /* Fat Finger Settings */
 @media screen and (max-width: 1024px) {
-	button {
-		height: 48px;
-	}
+    button {
+        height: 48px;
+    }
 
-	a, .current-link {
-		height: 48px;
-		min-width: 48px;
+    a, .current-link {
+        height: 48px;
+        min-width: 48px;
 
-		display: inline-block;
-		line-height: 48px;
-	}
+        display: inline-block;
+        line-height: 48px;
+    }
 }
 
 /* Flexbox Styles */
 .flex-container {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
-	justify-content: space-between;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .flex-item {
-	flex: 1 0 auto;
+    flex: 1 0 auto;
 }
