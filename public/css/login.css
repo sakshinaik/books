@@ -4,6 +4,6 @@ button {
 
 @media screen and (min-width: 375px) {
     button {
-        margin: initial;
+        margin: 0;
     }
 }
