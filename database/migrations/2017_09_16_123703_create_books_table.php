@@ -27,15 +27,6 @@ class CreateBooksTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
         });
-
-        // A table that can be used to quickly pull default information on some books, made for searching
-        Schema::create('default_books', function(Blueprint $table) {
-            $table->increments('id');
-            $table->string('title')->index();
-            $table->string('author')->index();
-            $table->string('isbn', 13)->unique();
-            $table->string('image_path')->nullable();
-        });
     }
 
     /**
@@ -46,6 +37,5 @@ class CreateBooksTable extends Migration
     public function down()
     {
         Schema::dropIfExists('books');
-        Schema::dropIfExists('default_books');
     }
 }

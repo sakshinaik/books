@@ -1,3 +1,5 @@
+{{-- TODO: Figure out a more maintainable way to change the links between a and span --}}
+
 <nav>
     <ul>
         @auth
@@ -6,6 +8,13 @@
                     <span class="current-link">Home</span>
                 @else 
                     <a href="{{ route('home') }}">Home</a>
+                @endif
+            </li>
+            <li>
+                @if(Route::currentRouteName() == 'book.add')
+                    <span class="current-link">Add Book</span>
+                @else
+                    <a href="{{ route('book.add') }}">Add Book</a>
                 @endif
             </li>
             <li>

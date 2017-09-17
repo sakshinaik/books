@@ -1,8 +1,8 @@
 /* General Form Settings */
 form {
-    max-width: 425px;;
-    min-width: 320px;
-    margin: 0 auto 0 auto;
+    width: 100%;
+    max-width: 425px;
+    /*margin: 0 auto 0 auto;*/
 }
 
 form div {
@@ -15,6 +15,16 @@ fieldset {
 
 legend {
     width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
+
+input[type="file"] {
+    max-width: 234px;
+    height: 48px;
+    line-height: 45px;
 }
 
 .input-label {
@@ -49,6 +59,16 @@ legend {
 
     .input-field {
         max-width: 230px;
+    }
+
+    textarea.input-field {
+        max-width: 228px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    input[type="file"] {
+        height: auto;
+        line-height: inherit;
     }
 }
 

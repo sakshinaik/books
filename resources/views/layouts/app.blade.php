@@ -30,7 +30,7 @@
 
         @include('elements.nav')
         
-        <section id="main">
+        <section id="main" class="full-width">
             @yield('content')
         </section>
     </body>

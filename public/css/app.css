@@ -30,6 +30,15 @@ a.no-style {
     max-width: 100%;
 }
 
+.max-width-full {
+    max-width: 100%;
+}
+
+.max-width-1024 {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
 .error {
     color: #FF0000;
     text-align: center;
@@ -72,7 +81,7 @@ a.no-style {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .flex-item {
