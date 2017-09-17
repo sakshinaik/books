@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Not creating a view Provider for one variable at the moment.
+        // TODO: Create view provider to follow standard practice.
+        view()->share('imageHost', 'https://s3.amazonaws.com/kimberly-technology');
     }
 
     /**

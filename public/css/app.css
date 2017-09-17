@@ -17,6 +17,10 @@ a.no-style {
     text-decoration: inherit;
 }
 
+img {
+    max-width: 100%;
+}
+
 .current-link {
     color: inherit;
 }
@@ -32,6 +36,10 @@ a.no-style {
 
 .max-width-full {
     max-width: 100%;
+}
+
+.max-width-half {
+    max-width: 50%;
 }
 
 .max-width-1024 {
@@ -84,6 +92,10 @@ a.no-style {
     justify-content: space-around;
 }
 
+.flex-container-column {
+    flex-flow: column wrap;
+}
+
 .flex-item {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
 }
