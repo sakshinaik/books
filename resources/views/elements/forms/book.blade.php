@@ -7,7 +7,7 @@
     @isset($book->image_path)
         <div class="flex-item max-width-full">
             <h2 class="center-text">Current Cover Image</h2>
-            <img class="cover-image-large" src="https://s3.amazonaws.com/kimberly-technology{{ $book->image_path }}" alt="Book Cover">
+            <img class="cover-image-large" src="{{ $imageHost . $book->image_path }}" alt="Book Cover">
         </div>
     @endisset
 
