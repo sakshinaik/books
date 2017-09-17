@@ -86,7 +86,7 @@ class BookController extends Controller
 
         $book = \App\Book::updateOrCreate(['id' => $book['id']], $data);
 
-        return $this->index();
+        return redirect()->route('home');
     }
 
     /**
