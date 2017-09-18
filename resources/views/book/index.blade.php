@@ -34,7 +34,7 @@
 
                 <div class="flex-container">
                     <span class="label flex-item">Publication Date:</span>
-                    <span class="content flex-item">sdfsdf<!-- TODO: Add Publication Date --></span>
+                    <span class="content flex-item">{[ $book->publication_date }}</span>
                 </div>
 
                 <div class="flex-container">
