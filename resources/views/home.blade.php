@@ -24,7 +24,13 @@
             </td>
 
             <td class="flex-item image-cell needs-breathing-room">
+                @if (is_null($book->image_path))
+                    <a href="{{ route('book.update', $book->id) }}">
+                @endif
                 <img src="{{ (is_null($book->image_path)) ? '/images/placeholder-cage.png' : $imageHost . $book->image_path }}" alt="Cover Image for {{ $book->title }}">
+                @if (is_null($book->image_path))
+                    </a>
+                @endif
             </td>
 
             <td class="flex-item needs-breathing-room">
