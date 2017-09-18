@@ -27,6 +27,7 @@ Route::get('/book/update/{book}', 'BookController@update')->name('book.update');
 Route::post('/book/store/{book?}', 'BookController@store')->name('book.store');
 
 // Delete Book
-Route::get('/book/delete/{book}', 'BookController@delete')->name('book.delete');
+Route::delete('/book/delete/{book}', 'BookController@delete')->name('book.delete');
 
-// Update Book
+// Update Book Position
+Route::put('/book/move/{book}', 'BookController@move')->name('book.move');

@@ -12,15 +12,15 @@
     </section>
 @endif
 
-<table class="full-width">
+<table id="book-table" class="full-width">
     <tbody>
         @foreach ($books as $book)
-        <tr class="flex-container full-width">
+        <tr id="book-{{ $book->id }}" class="flex-container full-width">
             <td class="flex-item flex-container flex-container-column needs-breathing-room">
-                <a href="{{ route('book.update', $book->id) }}">Edit</a>
-                <a href="#" onlcick="deleteBook({{ $book->id }});">Delete</a>
-                <a href="#" onclick="moveBookUp({{ $book->id }});">^</a>
-                <a href="#" onclick="moveBookDown({{ $book->id }});">v</a>
+                <button onclick="window.location='{{ route('book.update', $book->id) }}';">Edit</button>
+                <button onclick="deleteBook({{ $book->id }});">Delete</button>
+                <button onclick="moveBookUp({{ $book->id }});">^</button>
+                <button onclick="moveBookDown({{ $book->id }});">v</button>
             </td>
 
             <td class="flex-item image-cell needs-breathing-room">
@@ -30,7 +30,7 @@
             <td class="flex-item needs-breathing-room">
                 <div class="flex-container">
                     <span class="label flex-item">Title:</span>
-                    <span class="content flex-item">{{ $book->title }}</span>
+                    <span id="book-{{ $book->id }}-title" class="content flex-item">{{ $book->title }}</span>
                 </div>
 
                 <div class="flex-container">

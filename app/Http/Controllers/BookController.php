@@ -32,7 +32,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = \App\Book::where(['user_id' => Auth::user()->id])->get();
+        $books = \App\Book::where(['user_id' => Auth::user()->id])
+            ->orderBy('sort_order', 'asc')
+            ->get();
 
         return view('home', ['books' => $books]);
     }
@@ -84,6 +86,7 @@ class BookController extends Controller
         unset($data['image']);
         $data['image_path'] = $filePath;
 
+        $data['sort_order'] = \App\Book::where('user_id', Auth::user()->id)->max('sort_order') + 10;
         $book = \App\Book::updateOrCreate(['id' => $book['id']], $data);
 
         return redirect()->route('home');
@@ -101,6 +104,36 @@ class BookController extends Controller
         }
 
         $book->delete();
+
+        // Cleanup
+        \App\Book::setSortOrder(Auth::user()->id);
+
+        return response()->json($book);
+    }
+
+    /**
+     * Re-arrange a book, the request should send a field named "move" assigned to a whole number
+     * The element will be moved $move number of times.  If $move is less than one, the element will be moved higher
+     * on the list, and if $move is greater than 1, it will be moved lower on the list.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function move(BookRequest $request, \App\Book $book)
+    {
+        $move = $request->input('move', false);
+
+        if($move === false) {
+            \App::abort(400, 'No Direction is set (e2588)');
+        }
+
+        $movementAmount = $move * 10; 
+        $movementAmount += ($move < 0) ? -1 : 1;
+
+        $book->sort_order += $movementAmount;
+        $book->save();
+
+        // Cleanup
+        \App\Book::setSortOrder(Auth::user()->id);
 
         return response()->json($book);
     }

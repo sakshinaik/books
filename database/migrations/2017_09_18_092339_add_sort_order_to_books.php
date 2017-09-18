@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddBookIdToBooks extends Migration
+class AddSortOrderToBooks extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,8 @@ class AddBookIdToBooks extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->integer('book_id')
-                ->unsigned()
-                ->nullable()
-                ->after('user_id')
-                ->index();
-
-            $table->foreign('book_id')->references('id')->on('books')
-                ->onUpdate('restrict')
-                ->onDelete('restrict');
+            $table->integer('sort_order')
+                ->after('user_id');
         });
     }
 
@@ -34,9 +27,7 @@ class AddBookIdToBooks extends Migration
     public function down()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->dropForeign('books_book_id_foreign');
-
-            $table->dropColumn('book_id');
+            $table->dropColumn('sort_order');
         });
     }
 }
