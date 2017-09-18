@@ -19,8 +19,8 @@ class CreateBooksTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->string('title');
             $table->string('author');
-            $table->text('description')->nullage();
             $table->string('isbn', 13)->nullable();
+            $table->text('description')->nullage();
             $table->string('image_path')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')
