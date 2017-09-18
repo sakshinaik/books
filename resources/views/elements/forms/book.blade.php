@@ -40,6 +40,18 @@
             </div>
 
             <div class="flex-container full-width">
+                {{ Form::label('publication_date', 'Publication Date', ['class' => 'flex-item center-text input-label']) }}
+                @if ($errors->has('publication_date'))
+                    <div class="error flex-item">
+                        <span>
+                            <strong>{{ $errors->first('publication_date') }}</strong>
+                        </span>
+                    </div>
+                @endif
+                {{ Form::date('publication_date', null, ['class' => 'flex-item input-field']) }}
+            </div>
+
+            <div class="flex-container full-width">
                 {{ Form::label('isbn', 'ISBN', ['class' => 'flex-item center-text input-label']) }}
                 @if ($errors->has('isbn'))
                     <div class="error flex-item">
