@@ -17,7 +17,8 @@ class StoreBookRequest extends BookRequest
             'title' => 'required|max:255',
             'author' => 'required|max:255',
             'isbn' => 'nullable|max:13',
-            'image' => 'nullable|file|image'
+            'image' => 'nullable|file|image',
+            'publication_date' => 'nullable|date',
         ];
     }
 }
