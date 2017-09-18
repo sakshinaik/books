@@ -20,6 +20,7 @@ Auth::routes();
 
 // Book Routes
 Route::get('/home', 'BookController@index')->name('home');
+Route::get('/book/sort', 'BookController@sort')->name('book.sort');
 
 // Create/Edit Book
 Route::get('/book/add', 'BookController@add')->name('book.add');

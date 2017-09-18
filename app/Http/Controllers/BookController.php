@@ -39,6 +39,18 @@ class BookController extends Controller
         return view('home', ['books' => $books]);
     }
 
+    public function sort(Request $request)
+    {
+        $sortField = $request->input('field', false);
+        $sortDirection = $request->input('direction', 'desc');
+
+        $books = \App\Book::where(['user_id' => Auth::user()->id])
+            ->orderBy($sortField, $sortDirection)
+            ->get();
+
+        return view('book.index', ['books' => $books]);
+    }
+
     /**
      * Create a new book
      *

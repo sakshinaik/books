@@ -4,6 +4,25 @@ $(document).ajaxStart(function() {
     $(document.body).css({'cursor' : 'default'});
 });
 
+function sortIndex() {
+    let field = $('#sort-field').val();
+    let direction = $('#sort-direction').val();
+
+    console.log(`Attempting to sort index on ${field} ${direction}`);
+
+    $.ajax('/book/sort', {
+        method: 'get',
+        data: `field=${field}&direction=${direction}`,
+        success: function(data) {
+            $('#book-list').html(data);
+            $('.movement').remove();
+        },
+        error: function() {
+            alert('There was an issue sorting your books!');
+        }
+    })
+}
+
 function deleteBook(bookID) {
     console.log("Attempting to delete " + bookID);
 
