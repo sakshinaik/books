@@ -55,7 +55,7 @@ function moveBook(bookID, n) {
         success: function() {
             let currentRow = $('#book-' + bookID);
             let movedRow = currentRow;
-            for (var i = 0 - 1; i <= n; i++) {
+            for (var i = 0; i < Math.abs(n); i++) {
                 currentRow = (n < 0) ? currentRow.prev() : currentRow.next();
             }
 
