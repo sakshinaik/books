@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('isbn', 13)->nullable();
-            $table->text('description')->nullage();
+            $table->text('description')->nullable();
             $table->string('image_path')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')
