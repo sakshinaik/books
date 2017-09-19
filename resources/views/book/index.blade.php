@@ -6,7 +6,7 @@
                 <button onclick="window.location='{{ route('book.update', $book->id) }}';">Edit</button>
                 <button onclick="deleteBook({{ $book->id }});">Delete</button>
                 <button onclick="moveBookUp({{ $book->id }});" class="movement">^</button>
-                <button onclick="moveBookDown({{ $book->id }}" class="movement");">v</button>
+                <button onclick="moveBookDown({{ $book->id }});" class="movement">v</button>
             </td>
 
             <td class="flex-item image-cell needs-breathing-room">
