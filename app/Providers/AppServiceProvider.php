@@ -13,6 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app['request']->server->set('HTTPS', $this->app->environment() != 'local');
+
         // Not creating a view Provider for one variable at the moment.
         // TODO: Create view provider to follow standard practice.
         view()->share('imageHost', 'https://s3.amazonaws.com/kimberly-technology');
