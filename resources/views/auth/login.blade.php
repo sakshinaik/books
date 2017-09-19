@@ -6,7 +6,7 @@
 @endpush
 
 @section('content')
-<form method="POST" action="{{ route('login') }}">
+<form method="POST" action="{{ route('login') }}" class="center">
     {{ csrf_field() }}
 
     <fieldset>

@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-<form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('register') }}" class="center">
     {{ csrf_field() }}
     <fieldset>
         <legend class="center-text">Register</legend>

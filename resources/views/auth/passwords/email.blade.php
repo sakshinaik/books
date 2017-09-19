@@ -6,7 +6,7 @@
 @endpush
 
 @section('content')
-<form method="POST" action="{{ route('password.email') }}">
+<form method="POST" action="{{ route('password.email') }}" class="center">
     {{ csrf_field() }}
     <fieldset>
         <legend class="center-text">Reset Password</legend>
